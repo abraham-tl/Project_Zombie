@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class Move_Player : MonoBehaviour {
     public float speed;
-	// Use this for initialization
-	void Start () {
+    public bool invertedmouse;
+    float mousex;
+    float mousey;
+
+    // Use this for initialization
+    void Start () {
         speed = 0.1f;
 	}
 	
@@ -27,5 +31,9 @@ public class Move_Player : MonoBehaviour {
         {
             transform.position += transform.right * speed;
         }
+       
+        mousex = mousex + Input.GetAxis("Mouse X");
+        transform.eulerAngles = new Vector3(0, mousex, 0);
+        
     }
 }
