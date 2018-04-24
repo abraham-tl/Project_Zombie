@@ -8,6 +8,7 @@ public class Zombie  {
     string name_color_zombie;//Variable para el nombre del color que se le asigna al GameObject
     GameObject zombie;//Variable para el GAmeObject de la clase
 
+    //Constructor de la calse Zombie
     public Zombie(Color col,string color,Vector3 pos)
     {
         color_zombie = col;

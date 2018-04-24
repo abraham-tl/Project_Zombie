@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Manager : MonoBehaviour {
+public class Manager : MonoBehaviour
+{
     public int numboxes; //Variable para asignar numeros de instancia
     public GameObject[] boxes; //Vector para guardar los personajes
     string name_color =""; //Variable para guardar el nombre del color
 
-    void Start () {
+    void Start ()
+    {
         //Se define un vector para nombre y se llena 
         string[] names = new string[]
         {
@@ -32,7 +34,6 @@ public class Manager : MonoBehaviour {
             else
             {
                 int tipo = Random.Range(1, 3); //Aleatorio entre 1 y 2 para instanciar zombi o ciudadano
-                print(tipo);
                 if (tipo == 2)
                 {
                     Color col = Asignar_Color(); //se invoca un procedimiento para asignar color aleatorio
@@ -47,11 +48,6 @@ public class Manager : MonoBehaviour {
             }
         }       
 	}
-	
-	// Update is called once per frame
-	void Update () {
-
-    }
 
     //Funcion que retorna un color aleatorio 
     Color Asignar_Color()

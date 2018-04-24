@@ -2,20 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Move_Player : MonoBehaviour {
-    public float speed;
-    float mousey;
+public class FPSMove : MonoBehaviour {
+    public float speed = 0.1f;
+    float mousex;
+    Vector3 rotation;
 
-    // Use this for initialization
     void Start () {
-        speed = 0.1f;
+		
 	}
-	
-	// Update is called once per frame
+     //DESPLAZA EL OBJETO EN EL PLANO SEGUN LA TECLA QUE SE PRESIONE (ADELANTE ATRAS Y ALOS LADOS)
 	void Update () {
-        if (Input.GetKey(KeyCode.W))
+		if(Input.GetKey(KeyCode.W))
         {
-            transform.position += transform.forward * speed;
+            transform.position += transform.forward * speed ;
         }
         if (Input.GetKey(KeyCode.S))
         {
@@ -29,11 +28,11 @@ public class Move_Player : MonoBehaviour {
         {
             transform.position += transform.right * speed;
         }
-        mousey = mousey + Input.GetAxis("Mouse X");
-        Rotations_(mousey);
+
     }
+    //ROTA EL OBJETO DESDE 
     public void Rotations_(float rotations)
     {
-        transform.eulerAngles = new Vector3(0, rotations, 0);
+        transform.eulerAngles = new Vector3 (0, rotations,0);
     }
 }

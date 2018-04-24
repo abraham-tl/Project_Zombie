@@ -8,7 +8,8 @@ public class Ciudadano {
     string name;//variable para el nombre
     GameObject ciudadano;
 
-    public  Ciudadano(string n,Vector3 pos)
+    //Constructor de la calse Ciudadano
+    public Ciudadano(string n,Vector3 pos)
     {
         edad = Random.Range(15, 101);//Asigna a la edad una aleatorio entre 15 y 101
         name = n;
