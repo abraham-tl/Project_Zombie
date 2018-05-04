@@ -2,37 +2,50 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Zombie  {
-    
+public class Zombie : MonoBehaviour
+{
+    Zombie_Gusto zombie_dat;
+
     Color color_zombie;//Variable para el color que se le asigna al GameObject
     string name_color_zombie;//Variable para el nombre del color que se le asigna al GameObject
     GameObject zombie;//Variable para el GAmeObject de la clase
+    string name_color = ""; //Variable para guardar el nombre del color
 
-    //Constructor de la calse Zombie
-    public Zombie(Color col,string color,Vector3 pos)
+    void Start()
     {
-        color_zombie = col;
-        name_color_zombie = color;
-        zombie = GameObject.CreatePrimitive(PrimitiveType.Cube); //se crea una primitiva en la variable Game Object
-        zombie.GetComponent<Renderer>().material.color = color_zombie; //Se le asigna un color al GameObject
-        zombie.transform.position = pos;//Se le asigna una posicion al GameObject
-        Debug .Log(Imprimir_Mensaje());//imprime la funcion Imprimir_mensaje
+        zombie_dat = new Zombie_Gusto();
+
+        
+        gameObject.tag = "Zombie";
+        gameObject.GetComponent<Renderer>().material.color = Asignar_Color();
     }
+    
 
     string Imprimir_Mensaje()
     {
         return "SOY UN ZOMBIE DE COLOR "+ name_color_zombie;//retorna el texto y el color
     }
 
-    public GameObject Zombie_//Retorna el objeto de la clase
+    //Funcion que retorna un color aleatorio 
+    Color Asignar_Color()
     {
-        set
+        int col = Random.Range(1, 4);//se asigna un numero aleatorio en una variable entre 1 y 3
+        if (col == 1)//Si la variable es igual a 1 retorna el color azul
         {
-            zombie = value;
+            name_color = "AZUL";
+            return Color.blue;
         }
-        get
+        else if (col == 2)//Si la variable es igual a 2 retorna el color Verde
         {
-            return zombie;
+            name_color = "VERDE";
+            return Color.green;
         }
+        else if (col == 3)//Si la variable es igual a 3 retorna el color Rojo
+        {
+            name_color = "ROJO";
+            return Color.red;
+        }
+        else //Si es un numero diferente retorna Gris
+            return Color.gray;
     }
 }
