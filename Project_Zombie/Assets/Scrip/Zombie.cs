@@ -4,30 +4,29 @@ using UnityEngine;
 
 public class Zombie : MonoBehaviour
 {
-    Zombie_Gusto zombie_dat;
+   public Zombie_Gusto zombie_gusto;
+    public Zombie_Estado zombie_estado;
+    float speed = 0.1f;
+    int forward ;
+    int right;
 
-    Color color_zombie;//Variable para el color que se le asigna al GameObject
-    string name_color_zombie;//Variable para el nombre del color que se le asigna al GameObject
-    GameObject zombie;//Variable para el GAmeObject de la clase
     string name_color = ""; //Variable para guardar el nombre del color
 
     void Start()
     {
-        zombie_dat = new Zombie_Gusto();
-
-        
+        zombie_gusto = (Zombie_Gusto)Random.Range(0, 5);
         gameObject.tag = "Zombie";
         gameObject.GetComponent<Renderer>().material.color = Asignar_Color();
+        StartCoroutine(Timer_());
     }
-    
 
-    string Imprimir_Mensaje()
+    void Update()
     {
-        return "SOY UN ZOMBIE DE COLOR "+ name_color_zombie;//retorna el texto y el color
+       
     }
 
-    //Funcion que retorna un color aleatorio 
-    Color Asignar_Color()
+        //Funcion que retorna un color aleatorio 
+        Color Asignar_Color()
     {
         int col = Random.Range(1, 4);//se asigna un numero aleatorio en una variable entre 1 y 3
         if (col == 1)//Si la variable es igual a 1 retorna el color azul
@@ -47,5 +46,34 @@ public class Zombie : MonoBehaviour
         }
         else //Si es un numero diferente retorna Gris
             return Color.gray;
+    }
+
+    IEnumerator Timer_()
+    {
+       yield return new WaitForSeconds(2);
+        zombie_estado = (Zombie_Estado)Random.Range(0, 2);
+       
+        StartCoroutine(Timer_());      
+    }
+
+    void Movimiento_Zombie(int forward,int  right)
+    {
+       
+        if (forward == 1)
+        {
+            transform.position += transform.forward * speed;
+        }
+        else
+        {
+            transform.position -= transform.forward * speed;
+        }
+        if (right == 2)
+        {
+            transform.position -= transform.right * speed;
+        }
+        else
+        {
+            transform.position += transform.right * speed;
+        }
     }
 }

@@ -11,20 +11,19 @@ public class Manager : MonoBehaviour
     void Start ()
     {
         //Se define un vector para nombre y se llena 
-        string[] names = new string[]
-        {
-            "ABRAHAN","STUBBS","ROB","WHITE","JOSE","WILLIAM","JUANFER","ELKIN","ANDRES","SANTIAGO","FEDRY","ALEJO","VICTOR","SANDRA","LUIS","ISABEL","PEDRO","PABLO ","JASINTO JOSE","ANDREA",
-        };
+ 
 
         numboxes = Random.Range(10, 20);//Se asigna un valor aleatorio para la cantidad de instancias
         boxes = new GameObject[numboxes];//Se define el valor del vector donde se guandan los personjes
-
+        
         //Ciclo para crear las instancias
         for (int k = 0; k < numboxes; k++)
         {
             
             GameObject cube =  GameObject.CreatePrimitive(PrimitiveType.Cube); //se crea una primitiva en la variable Game Object
             cube.transform.position = Asignar_Posicion();//Se asigna una posisicion en el plano
+            cube.AddComponent<Rigidbody>();
+
            // Si es el primer cilo crea una instancia del heroe
             if (k == 0)
             {
