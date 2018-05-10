@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Hero : MonoBehaviour
 {
-    Struc_Hero struc_hero = new Struc_Hero();
-    GameObject hero;//Variable para el GAmeObject de la clase
+    Struc_Hero struc_hero;
+ 
     void Start()
     {
         struc_hero.speed = 5;
@@ -22,11 +22,11 @@ public class Hero : MonoBehaviour
     {
         if (collision.gameObject.tag == "Zombie")
         {           
-            Debug.Log("Waaaarrrr Quiero comer "+ collision.gameObject.GetComponent<Zombie>().zombie_gusto);
+            Debug.Log("Waaaarrrr Quiero comer "+ collision.gameObject.GetComponent<Zombie>().datos_zombie.gusto );
         }
         else if(collision.gameObject.tag == "Ciudadano")
         {
-            Debug.Log("Hola soy  " + collision.gameObject.GetComponent<Ciudadano>().ciudadano_nombre + "y tengo " + collision.gameObject.GetComponent<Ciudadano>().edad + " años");
+            Debug.Log("Hola soy  " + collision.gameObject.GetComponent<Ciudadano>().datos_ciudadano.nombre + "y tengo " + collision.gameObject.GetComponent<Ciudadano>().datos_ciudadano.edad + " años");
         }
     }
 }

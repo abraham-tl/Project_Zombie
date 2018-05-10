@@ -4,17 +4,14 @@ using UnityEngine;
 
 public class Zombie : MonoBehaviour
 {
-   public Zombie_Gusto zombie_gusto;
-    public Zombie_Estado zombie_estado;
-    float speed = 0.1f;
-    int forward ;
-    int right;
+    public Struc_Zombie datos_zombie;
 
     string name_color = ""; //Variable para guardar el nombre del color
 
     void Start()
     {
-        zombie_gusto = (Zombie_Gusto)Random.Range(0, 5);
+        datos_zombie.speed = 0.1f;
+        datos_zombie.gusto = (Zombie_Gusto)Random.Range(0, 5);
         gameObject.tag = "Zombie";
         gameObject.GetComponent<Renderer>().material.color = Asignar_Color();
         StartCoroutine(Timer_());
@@ -22,6 +19,10 @@ public class Zombie : MonoBehaviour
 
     void Update()
     {
+        if (datos_zombie.estado == Zombie_Estado.Moving)
+        {
+            Movimiento_Zombie();
+        }
        
     }
 
@@ -51,29 +52,32 @@ public class Zombie : MonoBehaviour
     IEnumerator Timer_()
     {
        yield return new WaitForSeconds(2);
-        zombie_estado = (Zombie_Estado)Random.Range(0, 2);
-       
+        datos_zombie.estado = (Zombie_Estado)Random.Range(-1, 2);
+        datos_zombie.moving_forward = Random.Range(-1, 2);
+        datos_zombie.movin_right  = Random.Range(-1, 2);
         StartCoroutine(Timer_());      
     }
 
-    void Movimiento_Zombie(int forward,int  right)
+    void Movimiento_Zombie()
     {
-       
-        if (forward == 1)
+
+        if (datos_zombie.moving_forward == 1 && transform.position.z <= 10)
         {
-            transform.position += transform.forward * speed;
+            transform.position += transform.forward * datos_zombie.speed;
         }
-        else
+        else if (datos_zombie.moving_forward == -1 && transform.position.z >= -10)
         {
-            transform.position -= transform.forward * speed;
+            transform.position -= transform.forward * datos_zombie.speed;
         }
-        if (right == 2)
+
+        if (datos_zombie.movin_right == 1 && transform.position.x >= -10)
         {
-            transform.position -= transform.right * speed;
-        }
-        else
-        {
-            transform.position += transform.right * speed;
+             transform.position -= transform.right * datos_zombie.speed;
+            //}
+            //else
+            //{
+            //    transform.position += transform.right * datos_zombie.speed;
+            //}
         }
     }
 }

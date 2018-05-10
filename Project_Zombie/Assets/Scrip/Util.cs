@@ -2,12 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public struct Struc_Zombie
-{
-    //public string zombie_nombre_color;
-    //public string zombie_gusto;
-    //public Color zombie_color;
-}
 
 public struct Struc_Hero
 {
@@ -25,6 +19,15 @@ public enum Ciudadano_Nombre
     ABRAHAN, STUBBS, ROB, WHITE, JOSE, WILLIAM, JUANFER, ELKIN, ANDRES, SANTIAGO, FEDRY, ALEJO, VICTOR, SANDRA, LUIS, ISABEL, PEDRO, PABLO, JASINTO, ANDREA
 };
 
+
+public struct Struc_Zombie
+    {
+    public Zombie_Gusto gusto;
+    public Zombie_Estado estado;
+    public float speed;
+    public int moving_forward;
+    public int movin_right;
+    };
 
 
 public enum Zombie_Gusto
