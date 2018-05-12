@@ -10,10 +10,7 @@ public class Manager : MonoBehaviour
     
     void Start ()
     {
-        //Se define un vector para nombre y se llena 
- 
 
-        numboxes = Random.Range(10, 20);//Se asigna un valor aleatorio para la cantidad de instancias
         boxes = new GameObject[numboxes];//Se define el valor del vector donde se guandan los personjes
         
         //Ciclo para crear las instancias
@@ -22,9 +19,9 @@ public class Manager : MonoBehaviour
             
             GameObject cube =  GameObject.CreatePrimitive(PrimitiveType.Cube); //se crea una primitiva en la variable Game Object
             cube.transform.position = Asignar_Posicion();//Se asigna una posisicion en el plano
-            cube.AddComponent<Rigidbody>();
+            cube.AddComponent<Rigidbody>();// se asigna un rigidbodi al objeto
 
-           // Si es el primer cilo crea una instancia del heroe
+           // Si es el primer cilo agrega el componente hero
             if (k == 0)
             {
                 cube.AddComponent(typeof(Hero));                   
@@ -33,14 +30,16 @@ public class Manager : MonoBehaviour
 
             else
             {
-                int tipo = Random.Range(1, 3); //Aleatorio entre 1 y 2 para instanciar zombi o ciudadano
+                int tipo = Random.Range(1, 3); //Aleatorio entre 1 y 2 agregar el componente zombie o ciudadano             
                 if (tipo == 2)
                 {
+                    // si es dos se agrega el componente Zombie
                     cube.AddComponent(typeof(Zombie));                  
                     boxes[k] = cube;//Se Guarda el Gameobject de la calse en el vector
                 }
                 else
                 {
+                    //si no es dos agrega el componente Ciudadano
                    cube.AddComponent(typeof(Ciudadano));
                    cube.tag = "Ciudadano";
                    boxes[k] = cube;   //Se Guarda el Gameobject de la calse en el vector
@@ -48,9 +47,6 @@ public class Manager : MonoBehaviour
             }
         }
     }
-
-    
-   
 
     //Funcion que retorna un Vector3 para la posicion
     Vector3 Asignar_Posicion()

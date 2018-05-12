@@ -4,18 +4,13 @@ using UnityEngine;
 
 public class Ciudadano : MonoBehaviour
 {
-
-    //int edad;//Variable para la edad
-    //string name;//variable para el nombre
-    //GameObject ciudadano;
-    public Struc_Ciudadano datos_ciudadano;
-   
+   public Struc_Ciudadano datos_ciudadano; // Se instancia una estructura  Struc Ciudadano
     
     void Start()
     {
-        datos_ciudadano.edad = Random.Range(15, 101);
-        datos_ciudadano.nombre = (Ciudadano_Nombre)Random.Range(0, 20);
-        gameObject.tag = "Ciudadano";
+        datos_ciudadano.edad = Random.Range(15, 101); //asigna edad aleatoria al ciudadano
+        datos_ciudadano.nombre = (Ciudadano_Nombre)Random.Range(0, 20); //Asigana al ciudadano un nombre aleatorio desde un enum
+        gameObject.tag = "Ciudadano";//Se tagea como ciudadano
     }
 
  }

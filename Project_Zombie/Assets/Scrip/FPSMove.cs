@@ -10,25 +10,25 @@ public class FPSMove : MonoBehaviour {
 
     void Start ()
     {
-        speed = Random.Range(0.1f, 0.5f);
+        speed = Random.Range(1.0f, 2.0f);
     }
      //DESPLAZA EL OBJETO EN EL PLANO SEGUN LA TECLA QUE SE PRESIONE (ADELANTE ATRAS Y ALOS LADOS)
 	void Update () {
 		if(Input.GetKey(KeyCode.W))
         {
-            transform.position += transform.forward * speed ;
+            transform.position += transform.forward * speed*Time.deltaTime ;
         }
         if (Input.GetKey(KeyCode.S))
         {
-            transform.position -= transform.forward * speed;
+            transform.position -= transform.forward * speed * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.A))
         {
-            transform.position -= transform.right * speed;
+            transform.position -= transform.right * speed * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.D))
         {
-            transform.position += transform.right * speed;
+            transform.position += transform.right * speed * Time.deltaTime;
         }
 
     }

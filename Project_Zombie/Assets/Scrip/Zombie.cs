@@ -4,28 +4,35 @@ using UnityEngine;
 
 public class Zombie : MonoBehaviour
 {
-    public Struc_Zombie datos_zombie;
-
+    public Struc_Zombie datos_zombie; //Se crea una varia ble de tipo stuc zombie
     string name_color = ""; //Variable para guardar el nombre del color
-
+   
     void Start()
     {
-        datos_zombie.speed = 0.1f;
-        datos_zombie.gusto = (Zombie_Gusto)Random.Range(0, 5);
-        gameObject.tag = "Zombie";
-        gameObject.GetComponent<Renderer>().material.color = Asignar_Color();
-        StartCoroutine(Timer_());
+        datos_zombie.direccion = Vector3.forward;
+        datos_zombie.speed = 0.5f; //Se asigna la velocidad del movimiento del zombie
+        datos_zombie.gusto = (Zombie_Gusto)Random.Range(0, 5); // Se asigna un aleatorio para el enum del gusto del zombie
+        gameObject.tag = "Zombie"; //Se le agraga untag al objeto zombie ("Zombie")
+        gameObject.GetComponent<Renderer>().material.color = Asignar_Color(); // Se asigna un color aleatorio al zombie llamando un subproceso (Asignar color)
+        StartCoroutine(Timer_()); // Se inicia la corrutina para el movimiento del Zombie
     }
 
     void Update()
     {
-        if (datos_zombie.estado == Zombie_Estado.Moving)
+        //
+        switch(datos_zombie.estado)
         {
-            Movimiento_Zombie();
+            case Zombie_Estado.Idle:
+                Movimiento_Zombie();
+                break;
         }
+
+        //if (datos_zombie.estado == Zombie_Estado.Moving)
+        //{
+        //    Movimiento_Zombie();
+        //}
        
     }
-
         //Funcion que retorna un color aleatorio 
         Color Asignar_Color()
     {
@@ -49,35 +56,19 @@ public class Zombie : MonoBehaviour
             return Color.gray;
     }
 
+    //Corutina para cambiar el estado del movimiento del zombie
     IEnumerator Timer_()
     {
        yield return new WaitForSeconds(2);
+        datos_zombie.direccion.x = Random.Range(-1,2);
+        datos_zombie.direccion.z = Random.Range(-1, 2);
         datos_zombie.estado = (Zombie_Estado)Random.Range(-1, 2);
-        datos_zombie.moving_forward = Random.Range(-1, 2);
-        datos_zombie.movin_right  = Random.Range(-1, 2);
         StartCoroutine(Timer_());      
     }
 
+    //Desplaza el zombie por el plano
     void Movimiento_Zombie()
     {
-
-        if (datos_zombie.moving_forward == 1 && transform.position.z <= 10)
-        {
-            transform.position += transform.forward * datos_zombie.speed;
-        }
-        else if (datos_zombie.moving_forward == -1 && transform.position.z >= -10)
-        {
-            transform.position -= transform.forward * datos_zombie.speed;
-        }
-
-        if (datos_zombie.movin_right == 1 && transform.position.x >= -10)
-        {
-             transform.position -= transform.right * datos_zombie.speed;
-            //}
-            //else
-            //{
-            //    transform.position += transform.right * datos_zombie.speed;
-            //}
-        }
+        transform.Translate(datos_zombie.direccion * datos_zombie.speed*Time .deltaTime); 
     }
 }

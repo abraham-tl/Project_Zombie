@@ -3,11 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public struct Struc_Hero
-{
-    public float speed;
-}
-
 public struct Struc_Ciudadano
 {
     public int edad;
@@ -25,8 +20,7 @@ public struct Struc_Zombie
     public Zombie_Gusto gusto;
     public Zombie_Estado estado;
     public float speed;
-    public int moving_forward;
-    public int movin_right;
+    public Vector3 direccion;
     };
 
 
