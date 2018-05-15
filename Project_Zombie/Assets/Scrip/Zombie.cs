@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Zombie : MonoBehaviour
 {
-    public Struc_Zombie datos_zombie; //Se crea una varia ble de tipo stuc zombie
+    public Struc_Zombie datos_zombie = new Struc_Zombie(); //Se crea una varia ble de tipo stuc zombie
     string name_color = ""; //Variable para guardar el nombre del color
    
     void Start()
@@ -19,18 +19,13 @@ public class Zombie : MonoBehaviour
 
     void Update()
     {
-        //
+        //Caso para ejecutar el movimiento de los Zombies
         switch(datos_zombie.estado)
         {
             case Zombie_Estado.Idle:
                 Movimiento_Zombie();
                 break;
         }
-
-        //if (datos_zombie.estado == Zombie_Estado.Moving)
-        //{
-        //    Movimiento_Zombie();
-        //}
        
     }
         //Funcion que retorna un color aleatorio 

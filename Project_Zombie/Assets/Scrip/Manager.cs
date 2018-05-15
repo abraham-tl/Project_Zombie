@@ -4,19 +4,18 @@ using UnityEngine;
 
 public class Manager : MonoBehaviour
 {
-    public int numboxes; //Variable para asignar numeros de instancia
+    public int numboxe; //Variable para asignar numeros de instancia
     public GameObject[] boxes; //Vector para guardar los personajes
     
     
     void Start ()
     {
-
-        boxes = new GameObject[numboxes];//Se define el valor del vector donde se guandan los personjes
+        numboxe = Random.Range(10, 21);
+        boxes = new GameObject[numboxe];//Se define el valor del vector donde se guandan los personjes
         
         //Ciclo para crear las instancias
-        for (int k = 0; k < numboxes; k++)
-        {
-            
+        for (int k = 0; k < numboxe; k++)
+        {           
             GameObject cube =  GameObject.CreatePrimitive(PrimitiveType.Cube); //se crea una primitiva en la variable Game Object
             cube.transform.position = Asignar_Posicion();//Se asigna una posisicion en el plano
             cube.AddComponent<Rigidbody>();// se asigna un rigidbodi al objeto
