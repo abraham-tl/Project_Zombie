@@ -11,6 +11,9 @@ public class Manager : MonoBehaviour
     readonly int min = Random.Range(5, 15);
 
     //Variable para asignar numeros de instancia
+=======
+    public int numboxes; //Variable para asignar numeros de instancia
+>>>>>>> parent of 6ba357d... Finalizado
     public GameObject[] boxes; //Vector para guardar los personajes
 
     public Manager()
