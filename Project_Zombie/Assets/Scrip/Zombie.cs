@@ -6,10 +6,13 @@ public class Zombie : MonoBehaviour
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     public Struc_Zombie datos_zombie = new Struc_Zombie(); //Se crea una varia ble de tipo stuc zombie
     string name_color; //Variable para guardar el nombre del color
 
 =======
+=======
+>>>>>>> parent of 6ba357d... Finalizado
 =======
 >>>>>>> parent of 6ba357d... Finalizado
     public Struc_Zombie datos_zombie; //Se crea una varia ble de tipo stuc zombie
