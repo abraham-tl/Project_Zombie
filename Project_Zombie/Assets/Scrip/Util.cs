@@ -22,6 +22,7 @@ public struct Struc_Zombie
     public Zombie_Estado estado;
     public float speed;
     public Vector3 direccion;
+    public Vector3 rotation;
     };
 
 //Enumeracion para el gusto del Zombie
@@ -33,8 +34,8 @@ Cabeza,Manos,Cuerpo,Pies,Cerebro
 // Enumeracion para movimiento del Zombie
 public enum Zombie_Estado
 {
-    Idle,Moving
-};
+    Idle,Moving,Rotating
+}
 
 
 

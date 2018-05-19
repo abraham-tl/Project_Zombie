@@ -3,15 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FPSMove : MonoBehaviour {
-    public float speed;
+    readonly float speed = 0;
    
-    float mousex;
-    Vector3 rotation;
-
-    void Start ()
-    {
-        speed = Random.Range(1.0f, 2.0f);
-    }
      //DESPLAZA EL OBJETO EN EL PLANO SEGUN LA TECLA QUE SE PRESIONE (ADELANTE ATRAS Y ALOS LADOS)
 	void Update () {
 		if(Input.GetKey(KeyCode.W))

@@ -4,32 +4,42 @@ using UnityEngine;
 
 public class Manager : MonoBehaviour
 {
-    public int numboxe; //Variable para asignar numeros de instancia
+    const int max = 25;
+    int numboxes = 0;
+
+    readonly int min = Random.Range(5, 15);
+
+    //Variable para asignar numeros de instancia
     public GameObject[] boxes; //Vector para guardar los personajes
-    
+
+    public Manager()
+    {
+         
+    }
+
     
     void Start ()
     {
-        numboxe = Random.Range(10, 21);
-        boxes = new GameObject[numboxe];//Se define el valor del vector donde se guandan los personjes
-        
+
+        numboxes = Random.Range(min, max);
+        boxes = new GameObject[numboxes];//Se define el valor del vector donde se guandan los personjes
+
         //Ciclo para crear las instancias
-        for (int k = 0; k < numboxe; k++)
-        {           
+        for (int k = 0; k < numboxes; k++)
+        {
+           
+            print("HOLAAAAAAAAAAAAAAAA");
             GameObject cube =  GameObject.CreatePrimitive(PrimitiveType.Cube); //se crea una primitiva en la variable Game Object
             cube.transform.position = Asignar_Posicion();//Se asigna una posisicion en el plano
             cube.AddComponent<Rigidbody>();// se asigna un rigidbodi al objeto
-
-           // Si es el primer cilo agrega el componente hero
             if (k == 0)
             {
-                cube.AddComponent(typeof(Hero));                   
-                boxes[k] = cube;//Se Guarda el Gameobject de la clase en el vector
+                cube.AddComponent(typeof(Hero));
+                boxes[k] = cube;//Se Guarda el Gameobject de la calse en el vector
             }
+            // Si es el primer cilo agrega el componente hero
 
-            else
-            {
-                int tipo = Random.Range(1, 3); //Aleatorio entre 1 y 2 agregar el componente zombie o ciudadano             
+            int tipo = Random.Range(1, 3); //Aleatorio entre 1 y 2 agregar el componente zombie o ciudadano             
                 if (tipo == 2)
                 {
                     // si es dos se agrega el componente Zombie
@@ -43,7 +53,6 @@ public class Manager : MonoBehaviour
                    cube.tag = "Ciudadano";
                    boxes[k] = cube;   //Se Guarda el Gameobject de la calse en el vector
                 }
-            }
         }
     }
 
