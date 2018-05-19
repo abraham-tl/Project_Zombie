@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Manager : MonoBehaviour
 {
+<<<<<<< HEAD
     const int max = 25;
     int numboxes = 0;
 
@@ -21,6 +22,7 @@ public class Manager : MonoBehaviour
     void Start ()
     {
 
+<<<<<<< HEAD
         numboxes = Random.Range(min, max);
         boxes = new GameObject[numboxes];//Se define el valor del vector donde se guandan los personjes
 
@@ -29,6 +31,14 @@ public class Manager : MonoBehaviour
         {
            
             print("HOLAAAAAAAAAAAAAAAA");
+=======
+        boxes = new GameObject[numboxes];//Se define el valor del vector donde se guandan los personjes
+        
+        //Ciclo para crear las instancias
+        for (int k = 0; k < numboxes; k++)
+        {
+            
+>>>>>>> parent of 6ba357d... Finalizado
             GameObject cube =  GameObject.CreatePrimitive(PrimitiveType.Cube); //se crea una primitiva en la variable Game Object
             cube.transform.position = Asignar_Posicion();//Se asigna una posisicion en el plano
             cube.AddComponent<Rigidbody>();// se asigna un rigidbodi al objeto

@@ -10,7 +10,7 @@ public class Ciudadano : MonoBehaviour
     {
         datos_ciudadano.edad = Random.Range(15, 101); //asigna edad aleatoria al ciudadano
         datos_ciudadano.nombre = (Ciudadano_Nombre)Random.Range(0, 20); //Asigana al ciudadano un nombre aleatorio desde un enum
-        gameObject.name = datos_ciudadano.nombre.ToString();
         gameObject.tag = "Ciudadano";//Se tagea como ciudadano
     }
+
  }
