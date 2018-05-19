@@ -5,12 +5,16 @@ using UnityEngine;
 public class Manager : MonoBehaviour
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     const int max = 25;
     int numboxes = 0;
 
     readonly int min = Random.Range(5, 15);
 
     //Variable para asignar numeros de instancia
+=======
+    public int numboxes; //Variable para asignar numeros de instancia
+>>>>>>> parent of 6ba357d... Finalizado
 =======
     public int numboxes; //Variable para asignar numeros de instancia
 >>>>>>> parent of 6ba357d... Finalizado
@@ -26,6 +30,7 @@ public class Manager : MonoBehaviour
     {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         numboxes = Random.Range(min, max);
         boxes = new GameObject[numboxes];//Se define el valor del vector donde se guandan los personjes
 
@@ -35,12 +40,17 @@ public class Manager : MonoBehaviour
            
             print("HOLAAAAAAAAAAAAAAAA");
 =======
+=======
+>>>>>>> parent of 6ba357d... Finalizado
         boxes = new GameObject[numboxes];//Se define el valor del vector donde se guandan los personjes
         
         //Ciclo para crear las instancias
         for (int k = 0; k < numboxes; k++)
         {
             
+<<<<<<< HEAD
+>>>>>>> parent of 6ba357d... Finalizado
+=======
 >>>>>>> parent of 6ba357d... Finalizado
             GameObject cube =  GameObject.CreatePrimitive(PrimitiveType.Cube); //se crea una primitiva en la variable Game Object
             cube.transform.position = Asignar_Posicion();//Se asigna una posisicion en el plano

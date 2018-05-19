@@ -39,17 +39,23 @@ MonoBehaviour:
     x: 0
     y: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 522
     height: 948
   m_MinSize: {x: 102, y: 121}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 14}
 =======
+=======
+>>>>>>> parent of 6ba357d... Finalizado
     width: 1333
     height: 323
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 18}
+<<<<<<< HEAD
+>>>>>>> parent of 6ba357d... Finalizado
+=======
 >>>>>>> parent of 6ba357d... Finalizado
   m_Panes:
   - {fileID: 18}
@@ -71,6 +77,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     y: 0
     width: 674
     height: 446
@@ -78,12 +85,17 @@ MonoBehaviour:
   m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 18}
 =======
+=======
+>>>>>>> parent of 6ba357d... Finalizado
     y: 714
     width: 1333
     height: 234
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
+<<<<<<< HEAD
+>>>>>>> parent of 6ba357d... Finalizado
+=======
 >>>>>>> parent of 6ba357d... Finalizado
   m_Panes:
   - {fileID: 14}
@@ -107,9 +119,15 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 522
     y: 0
     width: 674
+=======
+    x: 0
+    y: 0
+    width: 1333
+>>>>>>> parent of 6ba357d... Finalizado
 =======
     x: 0
     y: 0
@@ -120,7 +138,11 @@ MonoBehaviour:
   m_MaxSize: {x: 4002, y: 12063}
   vertical: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
   controlID: 80
+=======
+  controlID: 44
+>>>>>>> parent of 6ba357d... Finalizado
 =======
   controlID: 44
 >>>>>>> parent of 6ba357d... Finalizado
@@ -190,15 +212,21 @@ MonoBehaviour:
     width: 1920
     height: 948
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_MinSize: {x: 817, y: 492}
   m_MaxSize: {x: 22012, y: 14042}
   vertical: 0
   controlID: 21
 =======
+=======
+>>>>>>> parent of 6ba357d... Finalizado
   m_MinSize: {x: 713, y: 563}
   m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
   controlID: 43
+<<<<<<< HEAD
+>>>>>>> parent of 6ba357d... Finalizado
+=======
 >>>>>>> parent of 6ba357d... Finalizado
 --- !u!114 &8
 MonoBehaviour:
@@ -236,17 +264,23 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     y: 446
     width: 674
     height: 502
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
 =======
+=======
+>>>>>>> parent of 6ba357d... Finalizado
     y: 323
     width: 1333
     height: 391
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
+<<<<<<< HEAD
+>>>>>>> parent of 6ba357d... Finalizado
+=======
 >>>>>>> parent of 6ba357d... Finalizado
   m_ActualView: {fileID: 17}
   m_Panes:
@@ -270,9 +304,15 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 1196
     y: 0
     width: 333
+=======
+    x: 1333
+    y: 0
+    width: 234
+>>>>>>> parent of 6ba357d... Finalizado
 =======
     x: 1333
     y: 0
@@ -283,7 +323,11 @@ MonoBehaviour:
   m_MaxSize: {x: 10004, y: 14042}
   vertical: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
   controlID: 103
+=======
+  controlID: 160
+>>>>>>> parent of 6ba357d... Finalizado
 =======
   controlID: 160
 >>>>>>> parent of 6ba357d... Finalizado
@@ -329,7 +373,11 @@ MonoBehaviour:
     x: 0
     y: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 333
+=======
+    width: 234
+>>>>>>> parent of 6ba357d... Finalizado
 =======
     width: 234
 >>>>>>> parent of 6ba357d... Finalizado
@@ -358,7 +406,11 @@ MonoBehaviour:
     x: 0
     y: 417
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 333
+=======
+    width: 234
+>>>>>>> parent of 6ba357d... Finalizado
 =======
     width: 234
 >>>>>>> parent of 6ba357d... Finalizado
@@ -394,10 +446,13 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     y: 91
     width: 520
     height: 927
 =======
+=======
+>>>>>>> parent of 6ba357d... Finalizado
     y: 805
     width: 1331
     height: 213
@@ -459,9 +514,15 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 1198
     y: 508
     width: 329
+=======
+    x: 1335
+    y: 508
+    width: 230
+>>>>>>> parent of 6ba357d... Finalizado
 =======
     x: 1335
     y: 508
@@ -490,9 +551,15 @@ MonoBehaviour:
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_SelectedIDs: 20250000
     m_LastClickedID: 9504
     m_ExpandedIDs: 00000000d6240000ffffff7f
+=======
+    m_SelectedIDs: 86310000
+    m_LastClickedID: 12678
+    m_ExpandedIDs: 0000000096300000ffffff7f
+>>>>>>> parent of 6ba357d... Finalizado
 =======
     m_SelectedIDs: 86310000
     m_LastClickedID: 12678
@@ -526,7 +593,11 @@ MonoBehaviour:
     m_SelectedIDs: 
     m_LastClickedID: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000d6240000
+=======
+    m_ExpandedIDs: 0000000096300000
+>>>>>>> parent of 6ba357d... Finalizado
 =======
     m_ExpandedIDs: 0000000096300000
 >>>>>>> parent of 6ba357d... Finalizado
@@ -607,11 +678,14 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 524
     y: 537
     width: 670
     height: 481
 =======
+=======
+>>>>>>> parent of 6ba357d... Finalizado
     x: 0
     y: 414
     width: 1331
@@ -647,10 +721,17 @@ MonoBehaviour:
       x: 0
       y: 17
 <<<<<<< HEAD
+<<<<<<< HEAD
       width: 670
       height: 464
     m_Scale: {x: 1, y: 1}
     m_Translation: {x: 335, y: 232}
+=======
+      width: 1331
+      height: 353
+    m_Scale: {x: 1, y: 1}
+    m_Translation: {x: 665.5, y: 176.5}
+>>>>>>> parent of 6ba357d... Finalizado
 =======
       width: 1331
       height: 353
@@ -664,22 +745,32 @@ MonoBehaviour:
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
       x: -335
       y: -232
       width: 670
       height: 464
 =======
+=======
+>>>>>>> parent of 6ba357d... Finalizado
       x: -665.5
       y: -176.5
       width: 1331
       height: 353
+<<<<<<< HEAD
+>>>>>>> parent of 6ba357d... Finalizado
+=======
 >>>>>>> parent of 6ba357d... Finalizado
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LastWindowPixelSize: {x: 670, y: 481}
+=======
+  m_LastWindowPixelSize: {x: 1331, y: 370}
+>>>>>>> parent of 6ba357d... Finalizado
 =======
   m_LastWindowPixelSize: {x: 1331, y: 370}
 >>>>>>> parent of 6ba357d... Finalizado
@@ -709,6 +800,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 524
     y: 91
     width: 670
@@ -716,6 +808,10 @@ MonoBehaviour:
 =======
     x: 0
     y: 91
+=======
+    x: 0
+    y: 91
+>>>>>>> parent of 6ba357d... Finalizado
     width: 1331
     height: 302
   m_PersistentViewDataDictionary: {fileID: 0}
@@ -756,9 +852,15 @@ MonoBehaviour:
     m_Value: {x: 0.1014092, y: 0.89632326, z: -0.3370824, w: 0.26962325}
   m_Size:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: 76.38863
     speed: 2
     m_Value: 76.38863
+=======
+    m_Target: 65.25113
+    speed: 2
+    m_Value: 65.25113
+>>>>>>> parent of 6ba357d... Finalizado
 =======
     m_Target: 65.25113
     speed: 2
@@ -797,9 +899,15 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 1198
     y: 91
     width: 329
+=======
+    x: 1335
+    y: 91
+    width: 230
+>>>>>>> parent of 6ba357d... Finalizado
 =======
     x: 1335
     y: 91
@@ -809,9 +917,15 @@ MonoBehaviour:
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_SelectedIDs: 92e6ffff
     m_LastClickedID: -6510
     m_ExpandedIDs: e2fbffff00000000
+=======
+    m_SelectedIDs: fca4ffff
+    m_LastClickedID: -23300
+    m_ExpandedIDs: 12f4ffff0000000028330000
+>>>>>>> parent of 6ba357d... Finalizado
 =======
     m_SelectedIDs: fca4ffff
     m_LastClickedID: -23300
