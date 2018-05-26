@@ -2,29 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hero {
-    GameObject hero;//Variable para el GAmeObject de la clase
-
-    //Constructor de la calse Heroe
-    public Hero(Vector3 pos)
+public class Hero : MonoBehaviour
+{
+   
+    void Start()
     {
-        hero = GameObject.CreatePrimitive(PrimitiveType.Capsule);//se crea una primitiva en la variable Game Object
-        hero.GetComponent<Renderer>().material.color = Color.black;//Se le asigna un color al GameObject
-        hero.AddComponent(typeof(FPSMove));//Se le asigna la clase FPSMove al GameObject para el movimiento
-        Camera.main.transform.localPosition = hero.transform.position;//se le asigna a la camara la misposicion del heroe
-        Camera.main.transform.SetParent(hero.transform);//se hace la camara hija del heroe
+        gameObject.GetComponent<Renderer>().material.color = Color.gray;// se asigna al heroe el color gris
+        gameObject.AddComponent(typeof(FPSMove));//Se le asigna la clase FPSMove al GameObject para el movimiento
+        gameObject.tag = "Hero";       //Se tagea el ciudadano
+        Camera.main.transform.localPosition = transform.position;//se le asigna a la camara la misposicion del heroe
+        Camera.main.transform.SetParent(gameObject.transform);//se hace la camara hija del heroe
         Camera.main.gameObject.AddComponent<FPSAim>();//se le agrega la la clase FPSAim a la camara para la rotacion    
     }
-    //metodo para retornar el GameObject de la clase
-    public GameObject Hero_
+
+    //procedimiento para cuando el heroe choque con otro objeto
+    private void OnCollisionEnter(Collision collision)
     {
-        set
-        {
-            hero = value;
+        if (collision.gameObject.tag == "Zombie") 
+        {           
+            //si choca con un objeto tageado como Zombie imprime mensaje + gusto que desea comer
+            Debug.Log("Waaaarrrr Quiero comer "+ collision.gameObject.GetComponent<Zombie>().datos_zombie.gusto ); 
         }
-        get
+        else if(collision.gameObject.tag == "Ciudadano")
         {
-            return hero;
+            //si choca con un objeto tageado como Ciudadano imprime mensaje + nombre + edad
+            Debug.Log("Hola soy  " + collision.gameObject.GetComponent<Ciudadano>().datos_ciudadano.nombre + " y tengo " + collision.gameObject.GetComponent<Ciudadano>().datos_ciudadano.edad + " años");
         }
     }
 }

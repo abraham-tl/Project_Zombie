@@ -3,30 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FPSMove : MonoBehaviour {
-    public float speed = 0.1f;
-    float mousex;
-    Vector3 rotation;
-
-    void Start () {
-		
-	}
+    readonly float speed = 0;
+   
      //DESPLAZA EL OBJETO EN EL PLANO SEGUN LA TECLA QUE SE PRESIONE (ADELANTE ATRAS Y ALOS LADOS)
 	void Update () {
 		if(Input.GetKey(KeyCode.W))
         {
-            transform.position += transform.forward * speed ;
+            transform.position += transform.forward * speed*Time.deltaTime ;
         }
         if (Input.GetKey(KeyCode.S))
         {
-            transform.position -= transform.forward * speed;
+            transform.position -= transform.forward * speed * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.A))
         {
-            transform.position -= transform.right * speed;
+            transform.position -= transform.right * speed * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.D))
         {
-            transform.position += transform.right * speed;
+            transform.position += transform.right * speed * Time.deltaTime;
         }
 
     }
