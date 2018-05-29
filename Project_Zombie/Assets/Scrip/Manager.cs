@@ -1,55 +1,62 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using NPC;
+using NPC.Enemy;
+using NPC.Ally;
 
 public class Manager : MonoBehaviour
 {
-    const int max_NPC = 25;
-    Struc_Manager datos_manager;
+    public Text num_ally;//Variable de texto para la cantidad de ciudadanos
+    public Text num_enemy;//Variable de texto para la cantidad de Zombies
+    int ally = 0; //Entero para el contador de Ciudadanos
+    int enemy = 0;//Entero para el contador de Zombies
+    const int max_NPC = 25; //Constante para el maximo de instancias
+    Struc_Manager datos_manager;// variable de tipo estructura manager
     //Variable para asignar numeros de instancia
 
-
     public int numboxes; //Variable para asignar numeros de instancia
-
     public GameObject[] boxes; //Vector para guardar los personajes
-
    
     void Start ()
     {
-        datos_manager = new Struc_Manager(Random.Range(5, 15));
-
-        numboxes = Random.Range(datos_manager.min_NPC,max_NPC);
+        datos_manager = new Struc_Manager(Random.Range(5, 15));// instancia de la estructura de datos de la calse manager
+        numboxes = Random.Range(datos_manager.min_NPC,max_NPC);// aleatorio para el numero de instancias
         boxes = new GameObject[numboxes];//Se define el valor del vector donde se guandan los personjes
         
         //Ciclo para crear las instancias
         for (int k = 0; k < numboxes; k++)
-        {
-            
+        {           
             GameObject cube =  GameObject.CreatePrimitive(PrimitiveType.Cube); //se crea una primitiva en la variable Game Object
             cube.transform.position = Asignar_Posicion();//Se asigna una posisicion en el plano
             cube.AddComponent<Rigidbody>();// se asigna un rigidbodi al objeto
+            // Si es el primer cilo agrega el componente hero
             if (k == 0)
             {
-                cube.AddComponent(typeof(Hero));
-                boxes[k] = cube;//Se Guarda el Gameobject de la calse en el vector
+                cube.AddComponent(typeof(Hero));//Se agrega el componente Hero           
             }
-            // Si es el primer cilo agrega el componente hero
-
-            int tipo = Random.Range(1, 3); //Aleatorio entre 1 y 2 agregar el componente zombie o ciudadano             
+            else
+            {
+                int tipo = Random.Range(1, 3); //Aleatorio entre 1 y 2 agregar el componente zombie o ciudadano             
                 if (tipo == 2)
                 {
                     // si es dos se agrega el componente Zombie
-                    cube.AddComponent(typeof(Zombie));                  
-                    boxes[k] = cube;//Se Guarda el Gameobject de la calse en el vector
+                    cube.AddComponent(typeof(Zombie));
+                    cube.tag = "Zombie"; //Se le agraga un tag al objeto  ("Zombie")
                 }
                 else
                 {
                     //si no es dos agrega el componente Ciudadano
-                   cube.AddComponent(typeof(Ciudadano));
-                   cube.tag = "Ciudadano";
-                   boxes[k] = cube;   //Se Guarda el Gameobject de la calse en el vector
+                    cube.AddComponent(typeof(Ciudadano));
+                    cube.tag = "Ciudadano";//Se le agraga un tag al objeto  (Ciudadano")
                 }
+            }
+
+            
+            boxes[k] = cube;//Se Guarda el Gameobject de la calse en el vector
         }
+        Contar_NPCs();//Se llama el procedimiento para contal los NPC      
     }
 
     //Funcion que retorna un Vector3 para la posicion
@@ -60,5 +67,22 @@ public class Manager : MonoBehaviour
         pos.y = -0.5f;
         pos.z = Random.Range(-10, 10);
         return pos;
+    }
+
+    void Contar_NPCs()
+    {
+        foreach (GameObject o in boxes)//recorre el vector para contar los NPC
+        {
+            if (o.tag == "Zombie")
+            {
+                enemy += 1;
+            }
+            if (o.tag == "Ciudadano")
+            {
+                ally += 1;
+            }
+        }
+        num_ally.text = ally.ToString();//convierte el acomolador a dtrin y lo asigna al texto
+        num_enemy.text = enemy.ToString();//convierte el acomolador a dtrin y lo asigna al texto
     }
 }

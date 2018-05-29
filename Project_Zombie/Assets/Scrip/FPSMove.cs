@@ -3,10 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FPSMove : MonoBehaviour {
-    readonly float speed = 0;
-   
-     //DESPLAZA EL OBJETO EN EL PLANO SEGUN LA TECLA QUE SE PRESIONE (ADELANTE ATRAS Y ALOS LADOS)
-	void Update () {
+    Struc_Move velocity;//VAriable de tipo estructura Move
+    float speed = 0f;//variable para la velocidad
+
+    private void Start()
+    {
+        velocity = new Struc_Move(Random.Range(0.5f, 2.0f)); //se asigna la velocidad desde un readonly
+        speed = velocity.speed;//se asigna velocidad
+    }
+ 
+    
+    //DESPLAZA EL OBJETO EN EL PLANO SEGUN LA TECLA QUE SE PRESIONE (ADELANTE ATRAS Y ALOS LADOS)
+    void Update () {
 		if(Input.GetKey(KeyCode.W))
         {
             transform.position += transform.forward * speed*Time.deltaTime ;

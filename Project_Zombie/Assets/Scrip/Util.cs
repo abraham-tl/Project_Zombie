@@ -2,6 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+public struct Struc_Move
+{
+    public readonly float speed;
+
+    public Struc_Move(float velocity)
+    {
+        speed = velocity;
+    }
+}
+
 public struct Struc_Manager
 {
     public readonly int min_NPC;
@@ -13,8 +24,10 @@ public struct Struc_Manager
 
 public struct Struc_Ciudadano
 {
+   
     public int edad;
     public Ciudadano_Nombre nombre;
+ 
 }
 
 public enum Ciudadano_Nombre
@@ -28,7 +41,6 @@ public struct Struc_Zombie
     public Zombie_Gusto gusto;
     public Zombie_Estado estado;
     public float speed;
-    public Vector3 direccion;
     public Vector3 rotation;
     };
 
