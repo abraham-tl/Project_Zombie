@@ -8,25 +8,30 @@ namespace NPC
     {
         public class Zombie : MonoBehaviour
         {
+           public float Speedo;
             public Struc_Zombie datos_zombie; //Se crea una varia ble de tipo stuc zombie
             string name_color = "c"; //Variable para guardar el nombre del color
 
             void Start()
             {
-                datos_zombie.speed = 0.5f; //Se asigna la velocidad del movimiento del zombie
+                datos_zombie = new Struc_Zombie(Random.Range(0, 101));
+                
+                //datos_zombie.speed = 0.5f; //Se asigna la velocidad del movimiento del zombie
                 datos_zombie.gusto = (Zombie_Gusto)Random.Range(0, 5); // Se asigna un aleatorio para el enum del gusto del zombie              
-                gameObject.GetComponent<Renderer>().material.color = Asignar_Color(); // Se asigna un color aleatorio al zombie llamando un subproceso (Asignar color)
+               gameObject.GetComponent<Renderer>().material.color = Asignar_Color(); // Se asigna un color aleatorio al zombie llamando un subproceso (Asignar color)
                 StartCoroutine(Timer_(Zombie_Estado.Idle)); // Se inicia la corrutina para el movimiento del Zombie
-               
+                Speedo = datos_zombie.speed;
             }
 
             void Update()
             {
+              
                 //Define si el objeto rota se desplaza o se queda quieto
                 switch (datos_zombie.estado)
                 {
                     case Zombie_Estado.Moving:
                         Movimiento_Zombie();
+                        print(datos_zombie.speed);
                         break;
 
                     case Zombie_Estado.Rotating:
@@ -90,6 +95,11 @@ namespace NPC
                 return name_color;
             }
 
+            //public override void React()
+            //{
+            //    base.React();
+            //    Debug.Log("Citizen Reaction");
+            //}
         }
     }
 }

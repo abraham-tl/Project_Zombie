@@ -6,7 +6,7 @@ namespace NPC
 {
     namespace Ally
     {
-        public class Ciudadano : MonoBehaviour
+        public class Ciudadano: MonoBehaviour
         {
             public Struc_Ciudadano datos_ciudadano; // Se instancia una estructura  Struc Ciudadano
 
@@ -16,6 +16,11 @@ namespace NPC
                 datos_ciudadano.nombre = (Ciudadano_Nombre)Random.Range(0, 20); //Asigana al ciudadano un nombre aleatorio desde un enum
                 gameObject.name = datos_ciudadano.nombre.ToString();//se asigna nombre a gameobjetc
             }
+            //public override void React()
+            //{
+            //    base.React();
+            //    Debug.Log("Citizen Reaction");
+            //}
         }
     }
 }

@@ -42,7 +42,16 @@ public struct Struc_Zombie
     public Zombie_Estado estado;
     public float speed;
     public Vector3 rotation;
-    };
+    public int Edad;
+    public Struc_Zombie(int eda)
+    {
+        Edad = eda;
+        rotation = new Vector3(0,0,0);
+        speed = ((100f - Edad) / 50f);
+        estado = Zombie_Estado.Idle;
+        gusto = Zombie_Gusto.Cabeza;
+    }
+};
 
 
 public enum Zombie_Gusto
