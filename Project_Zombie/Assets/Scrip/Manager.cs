@@ -25,11 +25,6 @@ public class Manager : MonoBehaviour
         numboxes = Random.Range(datos_manager.min_NPC,max_NPC);// aleatorio para el numero de instancias
         boxes = new GameObject[numboxes];//Se define el valor del vector donde se guandan los personjes
 
-
-
-
-
-
         //Ciclo para crear las instancias
         for (int k = 0; k < numboxes; k++)
         {           

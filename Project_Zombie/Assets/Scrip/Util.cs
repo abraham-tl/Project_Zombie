@@ -54,10 +54,10 @@ public struct Struc_Zombie
 };
 
 
-public enum Zombie_Gusto
-{
-Cabeza,Manos,Cuerpo,Pies,Cerebro
-};
+//public enum Zombie_Gusto
+//{
+//Cabeza,Manos,Cuerpo,Pies,Cerebro
+//};
 
 
 public enum Zombie_Estado
